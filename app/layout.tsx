@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Comfortaa, Montserrat} from "next/font/google";
+import { Montserrat} from "next/font/google";
 import "./globals.css";
 import LocoScroll from "./components/LocoScroll";
 

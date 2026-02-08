@@ -1,4 +1,3 @@
-import { on } from 'events';
 import React, { useEffect } from 'react'
 
 const Popup = ({isOpen, onClose}: {isOpen: boolean, onClose: () => void}) => {
