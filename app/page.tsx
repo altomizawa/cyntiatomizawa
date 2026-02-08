@@ -61,7 +61,7 @@ export default function Home() {
                   <button onClick={() => setIndex((index + 1) % collections.length)}><ChevronRight strokeWidth={1} size={48} /></button>
                 </div>
               </div>
-              <button className='absolute bottom-4 right-4 text-md cursor-pointer duration-500 hover:text-black/50' onClick={() => setOpenedCollection(collections[index])}>(view collection)</button>
+              <button className='absolute bottom-4 right-4 text-md cursor-pointer duration-500 hover:text-black/50' onClick={() => setOpenedCollection(index)}>(view collection)</button>
             </div>
           </div>
         </section>
