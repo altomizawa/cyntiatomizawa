@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cyntia Tomizawa - Portfolio
 
-## Getting Started
+A modern, elegant portfolio website for **Cyntia Tomizawa**, a jewelry designer originally from Brazil, trained in Florence, Italy, and now based in the United States.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Responsive Design** - Fully responsive layout with mobile-first approach
+- **Smooth Scrolling** - Locomotive Scroll integration for silky-smooth scroll experience
+- **Video Background** - Dynamic hero section with video background
+- **Collection Showcase** - Interactive jewelry collection gallery with carousel navigation
+- **Animated Navigation** - Elegant desktop sidebar and fullscreen mobile menu
+- **Contact Section** - Social links, email copy-to-clipboard, and phone contact
+- **Toast Notifications** - User feedback with Sonner toast library
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js 16](https://nextjs.org/) with App Router
+- **Language:** TypeScript
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations:** Locomotive Scroll
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Notifications:** [Sonner](https://sonner.emilkowal.ski/)
+- **Theming:** next-themes
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/altomizawa/cyntiatomizawa.git
+   cd cyntiatomizawa
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📁 Project Structure
+
+```
+├── app/
+│   ├── components/
+│   │   ├── LocoScroll.tsx    # Locomotive Scroll wrapper
+│   │   ├── Navbar.tsx        # Navigation component
+│   │   ├── Popup.tsx         # Collection popup modal
+│   │   ├── Sonner.tsx        # Toast notifications
+│   │   └── Video.tsx         # Video background component
+│   ├── utils/
+│   │   └── constants.ts      # Static content/data
+│   ├── globals.css           # Global styles
+│   ├── layout.tsx            # Root layout
+│   └── page.tsx              # Home page
+├── public/
+│   └── assets/               # Images and media files
+└── ...config files
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📜 Available Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 Sections
 
-## Learn More
+1. **Hero** - Full-screen video background with name and title
+2. **Work** - Interactive jewelry collection showcase
+3. **About** - Biography and professional background
+4. **Contact** - Social media links and contact information
 
-To learn more about Next.js, take a look at the following resources:
+## 📄 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is private and proprietary.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 👤 Contact
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Cyntia Tomizawa**
+- Instagram: [@cyntiatominy](https://www.instagram.com/cyntiatominy/)
+- LinkedIn: [Cyntia Tomizawa](https://www.linkedin.com/in/cyntia-tomizawa-81b18b262/)
+- Email: cyntiatomizawa@gmail.com
+- Phone: +1 (347) 593 0008
