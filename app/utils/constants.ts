@@ -1,0 +1,4 @@
+export const ABOUT = {
+  title: "ABOUT CYNTIA TOMIZAWA",
+  description: "Originally from Brazil and now based in the United States, I trained in jewelry design in Florence, Italy, and bring over nine years of experience across design, production, merchandising, and retail. My work spans the full lifecycle of jewelry creation, blending creative vision with technical mastery to craft high‑quality collections that resonate with diverse audiences. My inspiration draws from objects, architecture, geometric forms, fashion, and art—especially the clarity and balance of Bauhaus design. I’m continually exploring harmony within structure, using gemstones not as the focal point but as subtle contrasts that enrich texture and form. No matter how solid the materials, my goal is to create pieces that feel light, effortless, and thoughtfully balanced. That sense of ‘lightness’ is what makes a design truly resonate."
+}
