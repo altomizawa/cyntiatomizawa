@@ -45,18 +45,10 @@ export default function Home() {
             <p className="text-xl justify-self-end pr-6 animate-fade-in">Jewelry Designer</p>
           </div>
         </section>
-        <section id="work" className='relative z-0 w-screen h-screen overflow-hidden'>
-          <Work collections={collections} index={index} setIndex={setIndex} setOpenedCollection={setOpenedCollection} />
-        </section>
-        <section id="about" className='relative z-0 w-screen  sm:min-h-screen md:h-screen py-12 overflow-hidden bg-stone-800'>
-          <About />
-        </section>
-        <section id="press" className='relative z-0 w-screen  sm:min-h-screen md:h-screen py-12 overflow-hidden bg-neutral-900'>
-          <Press />
-        </section>
-        <section id="contact" className='relative z-0 w-screen h-screen overflow-hidden'>
-          <Contact />
-        </section>
+        <Work collections={collections} index={index} setIndex={setIndex} setOpenedCollection={setOpenedCollection} />
+        <About />
+        <Press />
+        <Contact />
         <Popup isOpen={openedCollection !== null} onClose={() => setOpenedCollection(null)} />
       </main>
     </>
