@@ -43,7 +43,6 @@ export default function ImageTrail({ containerRef }: { containerRef: React.RefOb
       if (el) {
         // Get relative position if needed, but clientX/Y works for fixed positioning
         el.style.display = 'block';
-        el.style.opacity = '1';
         el.style.left = clientX + 'px';
         el.style.top = clientY + 'px';
         el.style.zIndex = steps.current.toString();
@@ -74,14 +73,14 @@ export default function ImageTrail({ containerRef }: { containerRef: React.RefOb
   }, [containerRef]);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[1] w-full h-full overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-1 w-full h-full overflow-hidden">
       {DEFAULT_IMAGES.map((src, i) => (
         <img
           key={i}
           ref={(el) => { if (el) refs.current[i] = el; }}
           src={src}
           alt=""
-          className="absolute hidden opacity-0 duration-300 w-[200px] aspect-square  object-cover -translate-x-1/2 -translate-y-1/2 object-cover shadow-2xl transition-opacity duration-500 will-change-transform"
+          className="absolute w-[200px] hidden aspect-square  object-cover -translate-x-1/2 -translate-y-1/2 object-cover shadow-2xl  will-change-transform"
         />
       ))}
     </div>
