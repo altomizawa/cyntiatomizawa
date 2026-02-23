@@ -1,29 +1,29 @@
-import { useState, useEffect } from 'react';
+import { useCallback, useRef } from 'react';
 
 /**
- * A custom hook that returns a debounced version of the provided value.
- * Useful for limiting the rate at which an action (like a search API call) is performed.
+ * A custom hook that returns a debounced version of the provided callback.
+ * Useful for limiting the rate at which an event handler is executed.
  *
- * @param value The value to be debounced
+ * @param callback The function to be debounced
  * @param delay The delay in milliseconds
- * @returns The debounced value
+ * @returns A debounced version of the callback
  */
-export function useDebounce<T>(value: T, delay: number): T {
-  const [debouncedValue, setDebouncedValue] = useState<T>(value);
+export function useDebounceCallback<T extends (...args: any[]) => void>(
+  callback: T,
+  delay: number
+): (...args: Parameters<T>) => void {
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  useEffect(() => {
-    // Set debouncedValue to value after the specified delay
-    const handler = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
+  return useCallback(
+    (...args: Parameters<T>) => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
 
-    // Return a cleanup function that will be called every time useEffect is re-executed.
-    // This will clear the timeout if value or delay changes before the delay is up,
-    // which prevents the debouncedValue from being updated.
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [value, delay]);
-
-  return debouncedValue;
+      timeoutRef.current = setTimeout(() => {
+        callback(...args);
+      }, delay);
+    },
+    [callback, delay]
+  );
 }
