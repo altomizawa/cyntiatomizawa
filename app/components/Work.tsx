@@ -13,6 +13,9 @@ import {
 } from "motion/react"
 import { wrap } from "motion"
 
+import ImageTrail from './ImageTrail'
+
+
 interface ParallaxProps {
   children: string
   baseVelocity: number
@@ -86,6 +89,7 @@ interface WorkProps {
 }
 
 const Work = ({collections, index, setIndex }: WorkProps) => {
+  const sectionRef = useRef<HTMLElement>(null)
   const { scrollY } = useScroll()
   const scrollVelocity = useVelocity(scrollY)
   const smoothVelocity = useSpring(scrollVelocity, {
@@ -98,7 +102,8 @@ const Work = ({collections, index, setIndex }: WorkProps) => {
   const rotateY = useTransform(smoothVelocity, [-2000, 2000], [-10, 10])
 
   return (
-    <section id="work" className='relative z-0 w-screen h-[100vh] overflow-hidden bg-black'>
+    <section ref={sectionRef} id="work" className='relative z-0 w-screen h-[100vh] overflow-hidden bg-black'>
+      <ImageTrail containerRef={sectionRef} />
       <div className="z-10 text-center text-white flex flex-row-reverse items-center h-full">
         <div className='w-1/2 h-3/4 pr-8' style={{ perspective: "1000px" }}>
           <motion.div 

@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import Work from "./components/Work";
 import About from "./components/About";
 import Press from "./components/Press";
+import Work2 from "./components/Work2";
 
 export default function Home() {
   const [index, setIndex] = useState(0);
@@ -46,6 +47,7 @@ export default function Home() {
           </div>
         </section>
         <Work collections={collections} index={index} setIndex={setIndex} setOpenedCollection={setOpenedCollection} />
+        <Work2 />
         <About />
         <Press />
         <Contact />

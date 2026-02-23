@@ -21,6 +21,18 @@
   }
 }
 
+@keyframes imageAnimation {
+  0%{
+    opacity:0%;
+  }
+  50%{
+    opacity: 100%;
+  }
+  100%{
+    opacity: 0%;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -57,4 +69,8 @@ button {
   span {
     width: 120%;
   }
+}
+
+.image-trail {
+  animation: imageAnimation 3s ease-in-out infinite;
 }
