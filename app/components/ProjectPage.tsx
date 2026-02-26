@@ -88,18 +88,18 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
       
   return (
     <div className='body'>
-     <header className='header fixed top-0 left-1/2 -translate-x-1/2 w-[60%] mx-auto h-32 flex items-center justify-center gap-4 z-1000'>
-        <Link href={`/work/${prevProject.slug}`} className='header-buttons px-4 py-2 rounded-md bg-black/10 uppercase font-semibold text-black/60'><ArrowBigLeft strokeWidth={1.5} className='inline-block mr-2'/>Prev</Link>
+     <header className='header fixed top-0 left-1/2 -translate-x-1/2 w-[90%] md:w-[60%] mx-auto h-32 flex items-center justify-center gap-4 z-1000'>
+        <Link href={`/work/${prevProject.slug}`} className='header-buttons px-4 py-2 text-sm md:text-base rounded-md bg-black/10 uppercase font-semibold text-black/60'><ArrowBigLeft strokeWidth={1.5} className='inline-block mr-2'/>Prev</Link>
         <div className='header-scrollbar flex-1 flex items-center justify-center relative h-10'>
           <div className='absolute top-1/2 left-0 -translate-y-1/2 w-full h-full rounded-md bg-neutral-300 opacity-40 backdrop-blur-lg'/>
           <div className='progress-bar absolute top-0 left-0 w-full h-full bg-black/20 rounded-md'/>
-          <h1 className=' tracking-widest z-10 font-semibold text-black/60'>{project.title.toUpperCase()}</h1>
+          <h1 className=' tracking-widest z-10 font-semibold text-black/60 text-sm md:text-base'>{project.title.toUpperCase()}</h1>
         </div>
-        <Link href={`/work/${nextProject.slug}`} className='header-buttons px-4 py-2 rounded-md bg-black/10 uppercase font-semibold text-black/60'>Next<ArrowBigRight strokeWidth={1.5} className='inline-block ml-2'/></Link>
+        <Link href={`/work/${nextProject.slug}`} className='header-buttons px-4 py-2 text-sm md:text-base rounded-md bg-black/10 uppercase font-semibold text-black/60'>Next<ArrowBigRight strokeWidth={1.5} className='inline-block ml-2'/></Link>
       </header>
       <main className='relative'>
         <div className='h-screen grid place-items-center'>
-          <h1 className='text-[10rem] tracking-widest text-center'>{project.title.toUpperCase()}</h1>
+          <h1 className='text-[12vw] md:text-[10vw] tracking-widest text-center'>{project.title.toUpperCase()}</h1>
         </div>
         <div className='h-screen border'></div>
         <div className='h-screen border'></div>
@@ -107,9 +107,9 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
           <div className='absolute top-1/3 flex items-center justify-center h-2 w-[50vw]'>
             <div className='absolute top-1/2 left-0 -translate-y-1/2 w-full h-full rounded-sm bg-neutral-300 opacity-40 backdrop-blur-lg'/>
             <div className='next-progress-bar absolute top-0 left-0 w-full h-full bg-black/20 rounded-sm'/>
-            {/* <h1 className=' tracking-widest z-10 font-semibold text-black/60'>NEXT PROJECT:</h1> */}
+            <h1 className=' tracking-widest z-10 font-semibold text-black/60'>NEXT PROJECT:</h1>
           </div>
-          <h1 className='footer-title text-[10rem] tracking-widest text-center opacity-0'>{nextProject.title.toUpperCase()}</h1>
+          <h1 className='footer-title text-[12vw] md:text-[10vw] tracking-widest text-center opacity-0'>{nextProject.title.toUpperCase()}</h1>
         </div>
       </main>
     </div>
