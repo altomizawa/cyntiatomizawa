@@ -5,7 +5,6 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowBigLeft, ArrowBigRight } from 'lucide-react'
 import Link from 'next/link';
-import next from 'next';
 
 
 gsap.registerPlugin(useGSAP); // register the hook to avoid React version discrepancies 
