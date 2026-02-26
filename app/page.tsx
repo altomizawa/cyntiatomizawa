@@ -11,6 +11,7 @@ import Work from "./components/Work";
 import About from "./components/About";
 import Press from "./components/Press";
 import Work2 from "./components/Work2";
+import { ReactLenis, useLenis } from 'lenis/react'
 
 export default function Home() {
   const [index, setIndex] = useState(0);
@@ -46,7 +47,7 @@ export default function Home() {
             <p className="text-xl justify-self-end pr-6 animate-fade-in">Jewelry Designer</p>
           </div>
         </section>
-        <Work collections={collections} index={index} setIndex={setIndex} setOpenedCollection={setOpenedCollection} />
+        {/* <Work collections={collections} index={index} setIndex={setIndex} setOpenedCollection={setOpenedCollection} /> */}
         <Work2 />
         <About />
         <Press />
