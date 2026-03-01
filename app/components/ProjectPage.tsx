@@ -62,7 +62,6 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
       end: `+=${window.innerHeight*3}px`,
       pin: true,
       pinSpacing: true,
-      markers: true,
       onEnter: () => {
         if (!isTransitioning) {
           gsap.to(projectNavRef.current, {
@@ -110,13 +109,13 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
           <section className='h-screen grid place-items-center'>
             <h1 className='text-[12vw] md:text-[8vw] tracking-widest text-center opacity-100'>{project.title.toUpperCase()}</h1>
           </section>
-          <section ref={projectDescriptionRef} className='project-description-wrapper h-screen border flex items-center justify-center px-4 bg-white/40'>
+          <section ref={projectDescriptionRef} className='project-description-wrapper py-48  border flex items-center justify-center px-4 bg-white/40'>
             <p className='project-description text-2xl uppercase w-2/3 leading-12'>{project.description}</p>
           </section>
 
           {project.images.map((img, index) => (
             <section key={index} className='h-screen w-full relative overflow-hidden grid place-items-center gap-8 py-16 bg-white'>
-                  <Image src={img} alt={`${project.title} image ${index + 1}`} width={1920} height={1080} className='h-full w-full md:w-2/3 object-cover'/>
+                  <Image src={img} alt={`${project.title} image ${index + 1}`} width={1920} height={1080} className='h-full w-full md:w-2/3 object-cover border'/>
             </section>
           ))}
         <footer ref={footerRef} className='h-screen grid place-items-center relative'>
