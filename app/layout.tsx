@@ -24,7 +24,8 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} antialiased`}
       >
-        <LocoScroll>{children}</LocoScroll>
+        {children}
+        {/* <LocoScroll>{children}</LocoScroll> */}
       </body>
     </html>
   );

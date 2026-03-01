@@ -8,7 +8,7 @@ const Work2 = () => {
     const router = useRouter();
   
   return (
-    <section ref={sectionRef} id="work2" className='relative z-0 w-screen  sm:min-h-screen md:h-screen py-12 overflow-hidden bg-neutral-300 flex items-center justify-center'>
+    <section ref={sectionRef} id="work" className='relative z-0 w-screen  sm:min-h-screen md:h-screen py-12 overflow-hidden bg-neutral-300 flex items-center justify-center'>
       <ImageTrail containerRef={sectionRef} />
       <button className='flex flex-col items-center justify-center' onClick={() => router.push('/work/maze')}>
         <h2 className='text-[20vw] tracking-widest text-neutral-600 select-none text-center'>VIEW</h2>
