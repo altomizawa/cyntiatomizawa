@@ -169,9 +169,9 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
         </section>
         
         {/* Project Description */}
-        <section className='project-description uppercase tracking-wide border grid grid-cols-2 place-items-center px-4 bg-white/40'>
-          <p className='text-2xl text-black/50 w-2/3 leading-12'>{project.description}</p>
-          <Image src={project.coverImage} alt={`${project.title} cover image`} width={1920} height={1080} className='w-full h-full object-cover'/>
+        <section className='project-description uppercase tracking-wide border grid md:grid-cols-2 place-items-center px-4 bg-white/40'>
+          <p className='text-2xl text-black/50 w-2/3 leading-12 py-12'>{project.description}</p>
+          <Image src={project.coverImage} alt={`${project.title} cover image`} width={1920} height={1080} className='hidden md:block w-full h-full object-cover'/>
         </section>
 
         {/* Project Images */}
