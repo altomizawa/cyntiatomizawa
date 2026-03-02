@@ -146,10 +146,10 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
           
           <div onClick={() => setIsSelectMenuOpen(!isSelectMenuOpen)} className='header-scrollbar flex-1 flex items-center justify-center relative py-1 backdrop-blur-md cursor-pointer'>
             <ul className='select-menu absolute h-auto bottom-0 left-1/2 -translate-x-1/2 w-full grid place-items-center bg-neutral-100 shadow-md z-100 opacity-0'>
-              <Link href='/' className={`bg-neutral-600 text-white duration-300 cursor-pointer font-semibold tracking-widest text-xl w-full text-center h-full py-6 grid place-items-center`}>BACK TO HOME</Link>
+              <Link href='/' className={`bg-neutral-600 text-white duration-300 cursor-pointer font-semibold tracking-widest text-base md:text-xl w-full text-center h-full py-6 grid place-items-center`}>BACK TO HOME</Link>
             {
               projects.map((proj, index) => (
-                 <Link href={`/work/${proj.slug}`} key={index} className={`hover:text-white hover:bg-black text-neutral-400 duration-300 cursor-pointer font-semibold tracking-widest text-xl w-full text-center h-full py-6 grid place-items-center`}>{proj.title}</Link>
+                 <Link href={`/work/${proj.slug}`} key={index} className={`hover:text-white hover:bg-black text-neutral-400 duration-300 cursor-pointer font-semibold tracking-widest text-base md:text-xl w-full text-center h-full py-4 md:py-6 grid place-items-center`}>{proj.title}</Link>
               ))
             }
             </ul>
@@ -169,17 +169,17 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
         </section>
         
         {/* Project Description */}
-        <section className='project-description uppercase tracking-wide border grid md:grid-cols-2 place-items-center px-4 bg-white/40'>
-          <p className='text-2xl text-black/50 w-2/3 leading-12 py-12'>{project.description}</p>
-          <Image src={project.coverImage} alt={`${project.title} cover image`} width={1920} height={1080} className='hidden md:block w-full h-full object-cover'/>
+        <section className=' h-screen uppercase tracking-wide grid md:grid-cols-2 place-items-center px-4 bg-white/40'>
+          <p className='project-description text-lg md:text-xl text-black/50 w-2/3 leading-10 md:leading-12'>{project.description}</p>
+          <Image src={project.coverImage} alt={`${project.title} cover image`} width={1920} height={1080} className='project-description hidden md:block w-full h-full object-cover'/>
         </section>
 
         {/* Project Images */}
+        <section className='w-full h-full relative overflow-hidden grid md:grid-cols-2 place-items-center gap-8 py-16 bg-white'>
         {project.images.map((img, index) => (
-          <section key={index} className='h-screen w-full relative overflow-hidden grid place-items-center gap-8 py-16 bg-white'>
-              <Image src={img} alt={`${project.title} image ${index + 1}`} width={1920} height={1080} className='h-[90%] w-auto md:w-1/2 object-contain object-center'/>
+              <Image key={index} src={img} alt={`${project.title} image ${index + 1}`} width={1920} height={1080} className='h-screen w-auto object-contain object-center'/>
+            ))}
           </section>
-        ))}
 
         <footer className='footer h-screen grid place-items-center relative'>
           {/* Next Project */}

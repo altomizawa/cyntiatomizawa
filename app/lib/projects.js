@@ -56,16 +56,16 @@ const projects = [
       '/assets/LUNAR/5-BRINCO Trail.jpg',
       '/assets/LUNAR/6-ANEL Ciranda-1 - Copy.jpg',
       '/assets/LUNAR/7-BRINCO Reanaissance.jpg',
-      '/assets/LUNAR/8-CIRANDA-Anel-TRAIL-Brinco-Modelo-1.jpg'
+      // '/assets/LUNAR/8-CIRANDA-Anel-TRAIL-Brinco-Modelo-1.jpg'
     ],
   },
   {
     title: 'COLORS OF BRAZIL',
     description: 'The color palette for this collection was inspired by the Gothic churches I visited throughout Europe while living there. The luminous stained-glass windows - rich with deep hues and dramatic contrast - have always fascinated me, and their interplay of light and color became a guiding influence in these designs.',
     slug: 'colors',
-    coverImage: '/assets/COLORS/Brincos Cores do Brasil-1.jpg',
+    coverImage:  '/assets/COLORS/adjust the lips to a.png',
     images: [
-      '/assets/COLORS/adjust the lips to a.png',
+      // '/assets/COLORS/adjust the lips to a.png',
       '/assets/COLORS/ANEL Vitral.jpg',
       '/assets/COLORS/BRINCO Vitral.jpg',
       '/assets/COLORS/Brincos Cores do Brasil-1.jpg',
