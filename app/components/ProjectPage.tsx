@@ -80,6 +80,7 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
 
     gsap.to('.project-description ', {
       opacity: 1,
+      y: 0,
       scrollTrigger: {
         trigger: '.project-description',
         start: 'top 80%',
