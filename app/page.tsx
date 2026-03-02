@@ -11,7 +11,8 @@ import Work from "./components/Work";
 import About from "./components/About";
 import Press from "./components/Press";
 import Work2 from "./components/Work2";
-import { ReactLenis, useLenis } from 'lenis/react'
+import ReactLenis from 'lenis/react';
+
 
 export default function Home() {
   const [index, setIndex] = useState(0);
@@ -33,7 +34,7 @@ export default function Home() {
   ]
 
   return (
-    <>
+    <ReactLenis root>
       <main>
         <Toaster position="top-right" className='text-black'/>
         <header className='fixed top-0 left-0 w-32 min-h-screen z-100 filter-blur-lg flex flex-col gap-4 items-around justify-around animate-fade-in'>
@@ -54,7 +55,7 @@ export default function Home() {
         <Contact />
         <Popup isOpen={openedCollection !== null} onClose={() => setOpenedCollection(null)} />
       </main>
-    </>
+    </ReactLenis>
   );
 }
 
