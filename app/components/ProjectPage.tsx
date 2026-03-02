@@ -39,6 +39,8 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
     gsap.fromTo('.project-nav', { y: 100, opacity: 0 }, { y: 0, delay:0.25, opacity: 1, duration: 1, ease: 'power3.out' });
     gsap.set('.page-scrollbar', { scaleX: 0, transformOrigin: 'center center' });
     gsap.set('.project-description', { y: 50, opacity: 0 }); 
+    gsap.set('.parallax', { scale: 0.2, opacity: 0, transformOrigin: 'top center' });
+    gsap.fromTo('.parallax', { opacity: 0, y: 100 }, { y: 0, opacity: 1 });
     // gsap.to('.select-menu', {opacity: 0, pointerEvents: 'none', duration: 1, ease: 'power3.out'});
     
     const navScrollTrigger = ScrollTrigger.create({
@@ -52,6 +54,29 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
         })
       }
     })
+
+    gsap.to('.parallax', {
+      scale: 1,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.parallax',
+        start: 'top bottom',
+        end: 'top 20%',
+        scrub: true,
+      }
+    })
+
+    // const coverScrollTrigger = ScrollTrigger.create({
+    //   trigger: '.parallax',
+    //   start: 'top bottom',
+    //   end: 'bottom top',
+    //   scrub: true,
+    //   onUpdate: (self) => {
+    //     gsap.to('.parallax', {
+    //       scale: 1 + self.progress * 0.1, // scale up to 10% as you scroll
+    //     })
+    //   },
+    // })
 
     gsap.to('.project-description ', {
       opacity: 1,
@@ -164,14 +189,21 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
         </nav>
 
         {/* Project Title */}
-        <section className='h-screen grid place-items-center'>
+        <section className='h-[80vh] grid place-items-center'>
           <h1 className='tracking-widest text-[12vw] md:text-[8vw] text-center opacity-100 leading-12'>{project.title.toUpperCase()}</h1>
+        </section>
+
+        {/* PARALLAX */}
+        <section className='parallax h-[120vh] w-screen overflow-hidden mx-auto'>
+          <div className='w-screen h-[120vh] relative '>
+            <Image src={project.coverImage} alt={`${project.title} cover image`} width={1920} height={1080} className='absolute top-0 left-0 h-full w-full mx-auto object-cover object-center'/>
+          </div>
         </section>
         
         {/* Project Description */}
-        <section className=' h-screen uppercase tracking-wide grid md:grid-cols-2 place-items-center px-4 bg-white/40'>
+        <section className='h-[75vh] uppercase tracking-wide grid place-items-center px-4 bg-white/40'>
           <p className='project-description text-lg md:text-xl text-black/50 w-2/3 leading-10 md:leading-12'>{project.description}</p>
-          <Image src={project.coverImage} alt={`${project.title} cover image`} width={1920} height={1080} className='project-description hidden md:block w-full h-full object-cover'/>
+          {/* <Image src={project.coverImage} alt={`${project.title} cover image`} width={1920} height={1080} className='project-description hidden md:block w-full h-full object-cover'/> */}
         </section>
 
         {/* Project Images */}

@@ -1,10 +1,8 @@
 'use client'
-import Image from "next/image";
 import { useState } from "react";
 import Video from "./components/Video";
 import Popup from "./components/Popup";
 import Navbar from "./components/Navbar";
-import { ABOUT } from "./utils/constants";
 import { Toaster } from './components/Sonner';
 import Contact from "./components/Contact";
 import Work from "./components/Work";
@@ -15,23 +13,7 @@ import ReactLenis from 'lenis/react';
 
 
 export default function Home() {
-  const [index, setIndex] = useState(0);
   const [openedCollection, setOpenedCollection] = useState<number | null>(null);
-
-  const collections = [
-    {
-      name: "FENCES",
-      description: "A collection inspired by the concept of boundaries and the beauty found within them. Each piece in the FENCES collection explores the interplay between structure and freedom, showcasing intricate designs that evoke a sense of both confinement and liberation.",
-      image: "/assets/FENCES+TRIO-Anel-FENCES+DANCE-Brinco-Modelo.webp",
-      link: "/collections/fences"
-    },
-    {
-      name: "CONSTELAÇÃO",
-      description: "A collection inspired by the night sky and the constellations that adorn it. Each piece in the CONSTELAÇÃO collection captures the celestial beauty of stars and galaxies, featuring intricate designs that evoke a sense of wonder and cosmic elegance.",
-      image: "/assets/CONSTELAÇÃO-Conjunto-M-1.webp",
-      link: "/collections/constelacao"
-    },
-  ]
 
   return (
     <ReactLenis root>
@@ -48,7 +30,6 @@ export default function Home() {
             <p className="text-xl justify-self-end pr-6 animate-fade-in">Jewelry Designer</p>
           </div>
         </section>
-        {/* <Work collections={collections} index={index} setIndex={setIndex} setOpenedCollection={setOpenedCollection} /> */}
         <Work2 />
         <About />
         <Press />
