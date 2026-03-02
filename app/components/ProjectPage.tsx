@@ -225,7 +225,8 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
           </div>
 
           {/* Next Project Title */}
-          <h1 className='tracking-widest text-[12vw] md:text-[8vw] text-center opacity-100 leading-12'>{nextProject.title.toUpperCase()}</h1>
+          <h1 className='tracking-wide text-[12vw] md:text-[8vw] text-center opacity-100 leading-12 relative'>{nextProject.title.toUpperCase()} <span className='absolute -bottom-[5vw] left-1/2 -translate-x-1/2 tracking-widest z-10 font-semibold text-black/60 text-center text-xs'>
+            (keep scrolling)</span></h1>
         </footer>
       </main>
     </ReactLenis>
