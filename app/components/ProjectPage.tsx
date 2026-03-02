@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useRef, useEffect, use} from 'react'
+import React, { useState, useEffect} from 'react'
 import ReactLenis from 'lenis/react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -8,7 +8,6 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Link from 'next/link';
 import Image from 'next/image';
 import projects from '../lib/projects';
-import { useRouter } from 'next/navigation';
 
 
 gsap.registerPlugin(useGSAP); // register the hook to avoid React version discrepancies 
@@ -35,11 +34,11 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
   const [shouldUpdateProgress, setShouldUpdateProgress] = useState(true);
   const [isSelectMenuOpen, setIsSelectMenuOpen] = useState(false);
 
-  const router = useRouter();
 
   useGSAP(() => {
     gsap.fromTo('.project-nav', { y: 100, opacity: 0 }, { y: 0, delay:0.25, opacity: 1, duration: 1, ease: 'power3.out' });
     gsap.set('.page-scrollbar', { scaleX: 0, transformOrigin: 'center center' });
+    gsap.set('.project-description', { y: 50, opacity: 0 }); 
     // gsap.to('.select-menu', {opacity: 0, pointerEvents: 'none', duration: 1, ease: 'power3.out'});
     
     const navScrollTrigger = ScrollTrigger.create({
@@ -52,6 +51,17 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
           scaleX: self.progress,
         })
       }
+    })
+
+    gsap.to('.project-description ', {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: '.project-description',
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: true,
+        toggleActions: 'play none none reverse',
+      },
     })
     const footerScrollTrigger = ScrollTrigger.create({
       trigger: '.footer',
@@ -97,6 +107,7 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
     return () => {
       navScrollTrigger.kill();
       footerScrollTrigger.kill();
+      // projectDescriptionTrigger.kill();
     } 
   })
 
@@ -158,14 +169,15 @@ const ProjectPage = ({ project, nextProject, prevProject }: ProjectPageProps) =>
         </section>
         
         {/* Project Description */}
-        <section className='project-description py-48  border flex items-center justify-center px-4 bg-white/40'>
-          <p className='text-2xl uppercase w-2/3 leading-12'>{project.description}</p>
+        <section className='project-description uppercase tracking-wide border grid grid-cols-2 place-items-center px-4 bg-white/40'>
+          <p className='text-2xl text-black/50 w-2/3 leading-12'>{project.description}</p>
+          <Image src={project.coverImage} alt={`${project.title} cover image`} width={1920} height={1080} className='w-full h-full object-cover'/>
         </section>
 
         {/* Project Images */}
         {project.images.map((img, index) => (
           <section key={index} className='h-screen w-full relative overflow-hidden grid place-items-center gap-8 py-16 bg-white'>
-                <Image src={img} alt={`${project.title} image ${index + 1}`} width={1920} height={1080} className='h-[90%] w-[90%] md:w-2/3 object-contain'/>
+              <Image src={img} alt={`${project.title} image ${index + 1}`} width={1920} height={1080} className='h-[90%] w-auto md:w-1/2 object-contain object-center'/>
           </section>
         ))}
 

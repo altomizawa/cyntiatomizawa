@@ -11,7 +11,7 @@ const projects = [
       '/assets/FENCES/4-BRINCO Fences Dance-Rubelita.jpg',
       '/assets/FENCES/5-ANEL Fences One-Quartzo Negro.jpg',
       '/assets/FENCES/6-Brinco Fences One-Quartzo negro.jpg',
-      '/assets/FENCES/7-FENCES DIAMANTES-Brinco-Colar-M.jpg'
+      // '/assets/FENCES/7-FENCES DIAMANTES-Brinco-Colar-M.jpg'
     ],
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     slug: 'geometry',
     coverImage: '/assets/GEOMETRY/1-CYLINDER-Earrings.jpg',
     images: [
-      '/assets/GEOMETRY/1-CYLINDER-Earrings.jpg',
+      // '/assets/GEOMETRY/1-CYLINDER-Earrings.jpg',
       '/assets/GEOMETRY/2-EARRINGS-CUPULA.jpg',
       '/assets/GEOMETRY/3-Ring Cupula-M.jpg',
       '/assets/GEOMETRY/4-BRINCO Cuadrato.jpg',
@@ -35,12 +35,12 @@ const projects = [
     slug: 'maze',
     coverImage: '/assets/MAZE/Maze.jpg',
     images: [
-      '/assets/MAZE/BRINCO Maze LargeM.jpg',
       '/assets/MAZE/BRINCOS MAZE PEQ.jpg',
       '/assets/MAZE/BRINCOS Maze.jpg.jpeg',
       '/assets/MAZE/ColorsMaze(1).jpg',
       '/assets/MAZE/MAZE Ring-1.jpg',
-      '/assets/MAZE/Maze.jpg'
+      '/assets/MAZE/BRINCO Maze LargeM.jpg',
+      // '/assets/MAZE/Maze.jpg'
     ],
   },
   {
